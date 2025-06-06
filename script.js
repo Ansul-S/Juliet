@@ -21,10 +21,11 @@ noBtn.addEventListener("mouseenter", () => {
   const maxX = window.innerWidth - btnWidth - padding;
   const maxY = window.innerHeight - btnHeight - padding;
 
-  const randomX = Math.floor(Math.random() * maxX);
-  const randomY = Math.floor(Math.random() * maxY);
+  const randomX = Math.max(0, Math.floor(Math.random() * maxX));
+  const randomY = Math.max(0, Math.floor(Math.random() * maxY));
 
   noBtn.style.position = "fixed";
   noBtn.style.left = `${randomX}px`;
   noBtn.style.top = `${randomY}px`;
 });
+
