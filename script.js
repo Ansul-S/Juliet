@@ -1,3 +1,4 @@
+
 const question = document.querySelector(".question");
 const gif = document.querySelector(".gif");
 const yesBtn = document.querySelector(".yes-btn");
@@ -28,4 +29,3 @@ noBtn.addEventListener("mouseenter", () => {
   noBtn.style.left = `${randomX}px`;
   noBtn.style.top = `${randomY}px`;
 });
-
