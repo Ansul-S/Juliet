@@ -1,4 +1,3 @@
-
 const question = document.querySelector(".question");
 const gif = document.querySelector(".gif");
 const yesBtn = document.querySelector(".yes-btn");
@@ -14,7 +13,8 @@ yesBtn.addEventListener("click", () => {
   }, 4000);
 });
 
-noBtn.addEventListener("mouseenter", () => {
+// Unified function for movement
+function moveNoBtn() {
   const btnWidth = noBtn.offsetWidth;
   const btnHeight = noBtn.offsetHeight;
 
@@ -28,4 +28,15 @@ noBtn.addEventListener("mouseenter", () => {
   noBtn.style.position = "fixed";
   noBtn.style.left = `${randomX}px`;
   noBtn.style.top = `${randomY}px`;
+  noBtn.style.transition = "all 0.3s ease"; // Smooth movement
+}
+
+// Desktop hover
+noBtn.addEventListener("mouseenter", moveNoBtn);
+
+// Mobile tap
+noBtn.addEventListener("touchstart", (e) => {
+  e.preventDefault(); // Prevent stuck tap
+  moveNoBtn();
 });
+
